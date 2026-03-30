@@ -4,7 +4,7 @@ class ApiResponse<T> {
   message: string;
   statusCode: number;
 
-  constructor(statusCode: number, message: string, data: T | null = null) {
+  constructor(statusCode: number, data: T | null = null, message: string) {
     this.success = true;
     this.data = data;
     this.message = message;

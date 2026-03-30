@@ -49,9 +49,13 @@ export const POST = asyncHandler(async (req: Request) => {
     //Email service here //
 
     return NextResponse.json(
-      new ApiResponse(200, "Verification email resent", {
-        email: existedUserWithEmail.email,
-      }),
+      new ApiResponse(
+        200,
+        {
+          email: existedUserWithEmail.email,
+        },
+        "Verification email resent",
+      ),
     );
   }
 
@@ -66,6 +70,10 @@ export const POST = asyncHandler(async (req: Request) => {
   //Email service here//
 
   return NextResponse.json(
-    new ApiResponse(201, "User created successfully", newUser),
+    new ApiResponse(
+      201,
+      newUser,
+      "User created successfully and verification email sent successfully.",
+    ),
   );
 });

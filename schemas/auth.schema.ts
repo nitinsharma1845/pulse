@@ -10,5 +10,9 @@ export const registerSchema = z.object({
 
 export const loginSchema = z.object({
   identifier: z.string(),
-  password: z.string().min(6),
+  password: z.string().min(6, "Password must contain 6 charcters"),
+});
+
+export const checkUsernameSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters").max(20),
 });
